@@ -34,10 +34,8 @@ def main() -> None:
         box_small.collision_wall()
         box_small.end_game()
 
-        horizantal_line = Line(screen_obj.screen, (0, screen_size[1] - 40), (800, screen_size[1] - 40), "white", 9)
-        vertical_line = Line(screen_obj.screen, (40, 0), (40, 600), "white", 9)
-
-
+        horizantal_line = Line(screen_obj.screen, (0, screen_size[1] - 40), (800, screen_size[1] - 40), "black", 9)
+        vertical_line = Line(screen_obj.screen, (40, 0), (40, 600), "black", 9)
         horizantal_line.show()
         vertical_line.show()
         #-------------------"CODE GOES HERE"-------------------#
