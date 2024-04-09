@@ -45,3 +45,8 @@ class Box:
             self.collide_count += 1
             self.velocity.x *= -1
 
+    def end_game(self) -> None:
+        if self.rect.x <40:
+            print(f"{self.name} has collided {self.collide_count} times")
+            pygame.quit()
+            exit()
