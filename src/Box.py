@@ -33,5 +33,9 @@ class Box:
         self.rect.y += self.velocity_y * dt
 
     def collide(self, obj) -> None:
-        if self.rect.colliderect(obj.rect):
-            print(f"collide by other.rect {obj.name}")
+    def bounce(self, obj) -> None:
+        if self.collide(obj):  
+            sum_mass = self.mass + obj.mass
+            new_velocity = ((self.mass - obj.mass) / sum_mass * self.velocity.x)
+            new_velocity += ((2 * obj.mass) / sum_mass * obj.velocity.x)
+            self.velocity.x = new_velocity
