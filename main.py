@@ -21,11 +21,18 @@ def main() -> None:
     while screen_obj.running:
         screen_obj.is_event_quit()
         #-------------------"CODE GOES HERE"-------------------#
-        screen_obj.fill("red")
-        box2.draw(screen_obj.screen)
-        box1.draw(screen_obj.screen)
-        box1.move(dt)
-        box1.collide(box2)
+        screen_obj.fill("white")
+        box_big.draw(screen_obj.screen)
+        box_small.draw(screen_obj.screen)
+       
+        
+        box_small.move(dt)
+        box_big.move(dt)
+        
+        box_small.bounce(box_big)
+        box_big.bounce(box_small)
+        box_small.collision_wall()
+        box_small.end_game()
 
         horizantal_line = Line(screen_obj.screen, (0, screen_size[1] - 40), (800, screen_size[1] - 40), "white", 9)
         vertical_line = Line(screen_obj.screen, (40, 0), (40, 600), "white", 9)
