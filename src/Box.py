@@ -39,3 +39,9 @@ class Box:
             new_velocity = ((self.mass - obj.mass) / sum_mass * self.velocity.x)
             new_velocity += ((2 * obj.mass) / sum_mass * obj.velocity.x)
             self.velocity.x = new_velocity
+
+    def collision_wall(self) -> None:
+        if self.rect.x <= 45:
+            self.collide_count += 1
+            self.velocity.x *= -1
+
