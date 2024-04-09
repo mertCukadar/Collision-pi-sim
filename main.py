@@ -12,10 +12,10 @@ def main() -> None:
     screen_obj = Map(screen_size[0], screen_size[1], "Collide-pi-sim")
     clock = screen_obj.clock
 
-
-    velocity = Vector2D(1, 1)
-    box1 = Box(100, screen_size[1] - 90, 50, 50, "blue", 10, velocity , "box1")
-    box2 = Box(200, screen_size[1] - 90, 50, 50, "green", 10, velocity , "red box")
+    small_vector = Vector2D(0, 0)
+    big_vector = Vector2D(-50, 0)
+    box_small = Box(200, screen_size[1] - 90, 50, 50, "blue",1, "box_small" ,small_vector)
+    box_big = Box(400, screen_size[1] - 90, 50, 50, "green", 10000000000 , "red box" , big_vector)
 
 
     while screen_obj.running:
